@@ -1,0 +1,38 @@
+<!-- start mobile header -->
+<div class="mobile-header hidden-sm hidden-md hidden-lg">
+	<nav class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-content-wrap">
+			<div class="navbar-header">
+				{{#if  @blog.navigation}}
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				{{/if}}
+				<!-- <div class="search-toggle-wrap pull-right hidden-sm hidden-md hidden-lg">
+					<a href="" class="search-toggle"><i class="fa fa-search"></i></a>
+				</div> -->
+				{{#if @blog.logo}}
+				<a class="navbar-brand image-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+				{{else}}
+				<a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}}</a>
+				{{/if}}
+			</div>
+			<!-- <div class="search-toggle-wrap pull-right hidden-xs">
+				<a href="" class="search-toggle"><i class="fa fa-search"></i></a>
+			</div> -->
+			<div class="collapse navbar-collapse" id="main-menu">
+	            <!-- start navigation -->
+	            <ul class="menu navbar-right nav navbar-nav">
+				    {{navigation}}
+				</ul>
+	            <!-- end navigation -->
+	        </div>
+	        </div>
+		</div>
+	</nav>
+</div>
+<!-- end mobile header -->

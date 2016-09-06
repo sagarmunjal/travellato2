@@ -1,0 +1,108 @@
+@import "../sass/variables-site/colors";
+::-moz-selection{
+	background:$color__theme-main;
+}
+::selection{
+	background:$color__theme-main;
+}
+a:hover,a:focus,a:active{
+	color:$color__theme-main;
+}
+blockquote:before {
+	background: $color__theme-main;
+}
+.btn-search {
+	background: $color__theme-main;
+	&:focus, &:active:focus {
+		background: $color__theme-main;
+	}
+}
+.post-format {
+	color: $color__theme-main;
+}
+.more-link::after {
+	background: $color__theme-main;
+}
+.owl-theme .owl-controls .owl-page span {
+	background: $color__theme-main;
+}
+.entry-meta .entry-date::before,
+.entry-meta .author::before,
+.entry-meta .cat-links::before,
+.content-area .entry-footer .comments-link::before,
+.content-area .entry-footer .view-link::before, 
+.content-area .entry-footer .share-button::before {
+	color: $color__theme-main;
+}
+blockquote::before {
+	background: $color__theme-main;
+}
+.feature-area {
+	 #featured-item .entry-title span {
+	 	color: $color__theme-main;
+	 }
+	#featured-item .owl-controls .owl-dots .owl-dot span {
+		background: $color__theme-main;
+	}
+}
+.content-area .sticky-icon{
+	background: $color__theme-main !important;
+}
+/* pagination */
+.navigation {
+	.nav-links {
+		> li {			
+			&.active {
+				a, span {
+					background: $color__theme-main;
+					border-color: $color__theme-main;
+				}
+			}
+			a:hover {
+				background: $color__theme-main;
+				border-color: $color__theme-main;
+			}
+		}
+		li:first-child.nav-previous a:hover,
+		li:last-child.nav-next a:hover {
+			color: $color__theme-main;
+		}
+
+	}
+	> li.active a, > li.active span {
+	  background: $color__theme-main;
+	  border-color: $color__theme-main;
+	}
+	.nav-previous > a::after {
+		background: $color__theme-main;
+	}
+	.nav-next > a::after {
+		background: $color__theme-main;
+	}
+}
+
+.newsletter-area .form-newsletter #mc-embedded-subscribe::after {
+	background: $color__theme-main;
+}
+
+.go-button:hover {
+	background: $color__theme-main;
+}
+
+.tagcloud {
+	a:hover {
+		background: $color__theme-main;
+		border-color: $color__theme-main;
+	}
+}
+.widget_follow_us {
+	.follow-link .fa:hover {
+		background: $color__theme-main;
+		border-color: $color__theme-main;
+	}
+} 
+.widget_nav_menu ul li a:hover,
+.widget_nav_menu ul li span:hover::before, 
+.widget_nav_menu ul li a:hover::before {
+	color: $color__theme-main;
+}

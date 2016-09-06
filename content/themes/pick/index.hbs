@@ -1,0 +1,75 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! This bellow code is for loading header aria}}
+{{> "header"}}
+
+{{! This code is for Load slider only in homepage }}
+
+<!-- Featured Aria 
+===================================== -->
+{{#is "home"}}
+    <script>
+        if ( Sticky_Post['show'] === true  ) {
+            document.write('{{> "feat-slide"}}');
+        }
+    </script>
+
+{{/is}}
+
+<!-- Content Section 
+===================================== -->
+<div id="content" class="site-content">
+
+<script>
+    $( document ).ready(function() {
+        if ( Post_Layout === "grid" || Post_Layout === "grid_3" ) {
+            $('.content-area > .site-main > .row').attr('id', 'masonry-layout');
+        }
+    });
+
+</script>
+
+    <div class="container">
+        <div class="row">
+            <script>
+                $( document ).ready(function() {
+                    if ( Post_Layout === "grid_3"  ) {
+                        $('#main-layout').removeClass("col-md-8");
+                        $('#main-layout').addClass('col-md-12');
+                    }
+                });
+            </script>
+            <div class="col-md-8" id="main-layout">
+                <div id="primary" class="content-area">
+
+                    {{#foreach posts}}
+                        {{#if featured}}
+                            {{^has tag="sticky"}} 
+                                <div class="row featured-content">
+                                    {{> "loop"}}                 
+                                </div> <!-- /.row -->
+                            {{/has}}
+                        {{/if}}
+                    {{/foreach}}          
+
+                    <main id="main" class="site-main">
+                    	<div class="row">
+                            {{#foreach posts}}
+                                {{#unless featured}}
+                                    {{^has tag="sticky"}} 
+                                        {{> "loop"}}  
+                                    {{/has}}                              
+                                {{/unless}}
+                            {{/foreach}}                    		
+                    	</div> <!-- /.row -->
+
+                        <!-- pagination -->
+						{{pagination}}
+                    </main> <!-- / Main -->
+                </div> <!-- / Content-Aria -->
+            </div> <!-- / Col-md-8 -->
+			{{> "sidebar"}}
+        </div> <!-- / Row -->
+    </div> <!-- / Container -->
+</div> <!-- / site-content -->

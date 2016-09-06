@@ -1,0 +1,106 @@
+::-moz-selection {
+  background: #ddbe86;
+}
+
+::selection {
+  background: #ddbe86;
+}
+
+a:hover, a:focus, a:active {
+  color: #ddbe86;
+}
+
+blockquote:before {
+  background: #ddbe86;
+}
+
+.btn-search {
+  background: #ddbe86;
+}
+.btn-search:focus, .btn-search:active:focus {
+  background: #ddbe86;
+}
+
+.post-format {
+  color: #ddbe86;
+}
+
+.more-link::after {
+  background: #ddbe86;
+}
+
+.owl-theme .owl-controls .owl-page span {
+  background: #ddbe86;
+}
+
+.entry-meta .entry-date::before,
+.entry-meta .author::before,
+.entry-meta .cat-links::before,
+.content-area .entry-footer .comments-link::before,
+.content-area .entry-footer .view-link::before,
+.content-area .entry-footer .share-button::before {
+  color: #ddbe86;
+}
+
+blockquote::before {
+  background: #ddbe86;
+}
+
+.feature-area #featured-item .entry-title span {
+  color: #ddbe86;
+}
+.feature-area #featured-item .owl-controls .owl-dots .owl-dot span {
+  background: #ddbe86;
+}
+
+.content-area .sticky-icon {
+  background: #ddbe86 !important;
+}
+
+/* pagination */
+.navigation .nav-links > li.active a, .navigation .nav-links > li.active span {
+  background: #ddbe86;
+  border-color: #ddbe86;
+}
+.navigation .nav-links > li a:hover {
+  background: #ddbe86;
+  border-color: #ddbe86;
+}
+.navigation .nav-links li:first-child.nav-previous a:hover,
+.navigation .nav-links li:last-child.nav-next a:hover {
+  color: #ddbe86;
+}
+.navigation > li.active a, .navigation > li.active span {
+  background: #ddbe86;
+  border-color: #ddbe86;
+}
+.navigation .nav-previous > a::after {
+  background: #ddbe86;
+}
+.navigation .nav-next > a::after {
+  background: #ddbe86;
+}
+
+.newsletter-area .form-newsletter #mc-embedded-subscribe::after {
+  background: #ddbe86;
+}
+
+.go-button:hover {
+  background: #ddbe86;
+}
+
+.tagcloud a:hover {
+  background: #ddbe86;
+  border-color: #ddbe86;
+}
+
+.widget_follow_us .follow-link .fa:hover {
+  background: #ddbe86;
+  border-color: #ddbe86;
+}
+
+.widget_nav_menu ul li a:hover,
+.widget_nav_menu ul li span:hover::before,
+.widget_nav_menu ul li a:hover::before {
+  color: #ddbe86;
+}

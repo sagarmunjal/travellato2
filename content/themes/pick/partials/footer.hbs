@@ -1,0 +1,75 @@
+<!-- Footer
+================================================== --> 
+<footer id="colophon" class="site-footer">
+    
+    <!-- Instagram Photo Gallery 
+    ======================================= -->
+    <div id="footer-top" class="hidden">
+    	<div class="container-fluid">
+    		<div class="row">    			
+                <div id="instafeed-area">
+                    <h2 class="section-title">Follow us on Instagram</h2>
+                    <div id="instafeed"></div> <!-- /.instafeed-content -->
+                </div> <!-- /#instafeed -->             
+    		</div> <!-- /.row -->
+    	</div> <!-- /.container-fluid -->
+    </div> <!-- #footer-top" -->
+
+    <!-- Footer Bottom Widget Aria  
+    ======================================= -->
+    <div id="footer-middle">
+        <div class="container">
+            <div class="row">
+                
+            <script>
+                // Showing Widgets by order. Max three widgets allowed.
+                var i = 0;
+                for ( var key in Footer_Widget_Order ) {   
+                    if (i === 3) { break; }
+                    i++;   
+
+                    if ( Footer_Widget_Order[key] === "About_Me_Widget" && About_Me_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/about-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Ads_Widget" && Ads_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/ads-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Navigation_Widget" && Navigation_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/navigation-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Social_Widget" && Social_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/social-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Facebook_Page_Widget" && Facebook_Page_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/facebook-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Googleplus_Page_Widget" && Googleplus_Page_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/google-plus-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Twitter_Widget" && Twitter_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/twitter-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Contact_Widget" && Contact_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/contact-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Flickr_Widget" && Flickr_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4"> {{> "widgets/flickr-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Mailchimp_Widget" && Mailchimp_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4">{{> "widgets/newsletter-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Latest_Posts_Widget" && Latest_Posts_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4">{{> "widgets/latest-posts-widget"}}</div>');
+                    } else if ( Footer_Widget_Order[key] === "Tags_Widget" && Tags_Widget['show'] === true  ) {
+                        document.write('<div class="col-md-4">{{> "widgets/tags-widget"}}</div>');
+                    }                       
+                }   
+
+            </script> 
+                
+            </div> <!-- /.row -->
+        </div> <!-- /.container --> 
+    </div> <!-- / # Footer Middle -->
+
+    <div id="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright text-center">
+                        <p>copyright &copy; 2015 SoftHopper. All Rights Reserved.</p>
+                    </div> <!--  / .copyright-text -->
+                </div> <!--  / .col-md-12 -->
+            </div> <!--  / .row -->
+        </div> <!--  / .container -->
+    </div> <!--  / .footer-bottom -->
+</footer> <!-- / Footer --> 

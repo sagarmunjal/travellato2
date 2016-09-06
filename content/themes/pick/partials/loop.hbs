@@ -1,0 +1,195 @@
+{{#is "post, tag, author"}}
+    <script>
+        var Post_Layout = "list";
+    </script>
+{{/is}}
+
+{{#if featured}}
+    <div class="col-md-12 full-width" >
+{{else}}
+    <div class="pick-post-layout col-md-12 full-width" >
+{{/if}}
+
+    <script>
+        if ( Post_Layout === "grid" ){
+            $('.pick-post-layout').removeClass('col-md-12 full-width');
+            $('.pick-post-layout').addClass('col-md-6 grid');
+        } else if ( Post_Layout === "grid_3" ) {            
+            $('.pick-post-layout').removeClass('col-md-12 full-width');
+            $('.pick-post-layout').addClass('col-md-4 grid');
+        }
+    </script>
+
+    <article class="{{post_class}} format-{{#if featured}}featured{{else}}{{#has tag="link, audio, video, gallery, image, status"}}{{#has tag="image"}}image{{/has}}{{#has tag="audio"}}audio{{/has}}{{#has tag="video"}}video{{/has}}{{#has tag="gallery"}}gallery{{/has}}{{#has tag="quote"}}quote{{/has}}{{#has tag="status"}}status{{/has}}{{#has tag="link"}}link{{/has}}{{else}}starndard{{/has}}{{/if}} hentry">
+
+    {{^has tag="quote"}} {{! not show in quote and link posts}}
+        <header class="entry-header">
+            <div class="post-format">In 
+                 {{#if featured}}
+                     Featured
+                {{else}}
+                    {{#has tag="link, audio, video, gallery, image, status"}} 
+                        {{#has tag="image"}}Image{{/has}} 
+                        {{#has tag="audio"}}Audio{{/has}} 
+                        {{#has tag="video"}}Video{{/has}} 
+                        {{#has tag="gallery"}}Gallery{{/has}} 
+                        {{#has tag="quote"}}Quote{{/has}} 
+                        {{#has tag="status"}}Status{{/has}} 
+                        {{#has tag="link"}}Link{{/has}} 
+                    {{else}}
+                        Starndard
+                    {{/has}}
+                {{/if}}
+            </div> <!-- / entry-meta -->
+            {{#is "post"}}
+                <script>
+                    // remnove span tag from head title
+                    var title_text = $('html head title').text();
+                    var remove_title_text = title_text.replace('</span>', '');
+                    var coverted_title_text = remove_title_text.replace('<span>', '');
+                    $('html head title').text(coverted_title_text);
+
+                    // remnove span tag from post title
+                    var main_title = '{{title}}';
+                    var remove_mark = main_title.replace('&lt;/span&gt;', '');
+                    var coverted_word = remove_mark.replace('&lt;span&gt;', '');
+                    document.write('<h2 class="entry-title">'+coverted_word+'</h2>');
+                </script>
+            {{else}}
+                <script>
+                    // remnove span tag from post title
+                    var main_title = '{{title}}';
+                    var remove_mark = main_title.replace('&lt;/span&gt;', '');
+                    var coverted_word = remove_mark.replace('&lt;span&gt;', '');
+                    document.write('<h2 class="entry-title"><a href="{{url}}" rel="bookmark">'+coverted_word+'</a></h2>');
+                </script>
+            {{/is}}
+
+            <div class="entry-meta">
+                {{#if tags}}
+                    <span class="cat-links">{{tags prefix="In &nbsp;" separator=" "}}</span> 
+                {{/if}}
+                <span class="author vcard">By &nbsp;{{author}}</span>
+            </div> <!-- .entry-meta -->
+        </header> <!-- / entry-header -->
+        
+        {{^has tag="status, link"}}{{! not show in status posts}}
+            {{#if image}}
+            <figure class="post-thumb">
+                <img src="{{image}}" class="img-responsive" alt="{{title}}">
+            </figure> <!-- /.post-thumb -->
+            {{/if}}
+        {{/has}}{{! not show in status posts}}
+    {{/has}} {{! not show in quote posts}}
+
+    {{#has tag="link"}} {{! only for link posts }}
+        <div class="post-link">
+            <div class="post-link-wrapper">
+               <div style="display:none;">{{content}}</div>
+                <div class="tb">
+                    <div class="icon-area tb-cell">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <div class="link-content tb-cell">
+                        <script type="text/javascript">
+                            document.write('<h2><a href="'+Link_Url+'" target="_blank">'+Link_Title+'</a></h2><a href="'+Link_Url+'" target="_blank">'+Link_Url+'</a>');
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="images"><img alt="Link post" src="{{image}}">
+            </div>
+        </div>
+    {{/has}} {{! only for link posts }}
+
+    {{#has tag="quote"}} {{! only for quote posts  }}
+        <h2 class="entry-title hidden">{{title}}</h2>
+        <div class="quote-content">
+            <div class="quote-icon"><a href="{{url}}"><span><i class="fa fa-quote-left"></i></span></a></div>
+            <blockquote>
+                {{content}}
+            </blockquote>
+        </div>
+    {{/has}} {{! only for quote posts  }}
+
+    {{#has tag="status"}} {{! only for status posts  }}
+        <div class="post-media">
+            <div style="display:none;">{{content}}</div>
+            <div class="post-status-wrapper" {{#if image}} style="background-image:url({{image}})" {{/if}}>
+                <script type="text/javascript"> 
+
+                    if ( Post_Layout === "list" ) {
+                                    
+                        // this script to load status post
+                        function includeJs(jsFilePath) {
+                            var js = document.createElement("script");
+                            js.type = "text/javascript";
+                            js.src = jsFilePath;
+                            document.body.appendChild(js);
+                        }
+
+                        if (Status_Type == "facebook") {
+                            document.write('<div class="fb-post" data-href="' + Status_Url + '"></div>');
+                        } else if (Status_Type == "twitter") {
+                            document.write('<blockquote class="twitter-tweet"><a href="' + Status_Url + '"></a></blockquote>');
+                            includeJs("//platform.twitter.com/widgets.js");
+                        } else if (Status_Type == "google_plus") {
+                            document.write('<div class="g-post" data-href="' + Status_Url + '"></div>');
+                            includeJs("//apis.google.com/js/plusone.js");
+                        }
+
+                    } else {
+
+                        if ( Status_Type === "facebook") {
+                            document.write('{{^is "post"}}<a href="{{url}}">{{/is}}<div class="link-content tb-cell"><img src="{{@blog.url}}/assets/images/facebook.png" alt="'+Status_Type+'" /></div>{{^is "post"}}</a>{{/is}}');
+                        } else if ( Status_Type === "twitter") {
+                             document.write('{{^is "post"}}<a href="{{url}}">{{/is}}<div class="link-content tb-cell"><img src="{{@blog.url}}/assets/images/twitter.png" alt="'+Status_Type+'" /></div>{{^is "post"}}</a>{{/is}}');
+                        } else if ( Status_Type === "google_plus") {
+                             document.write('{{^is "post"}}<a href="{{url}}">{{/is}}<div class="link-content tb-cell"><img src="{{@blog.url}}/assets/images/google-plus.png" alt="'+Status_Type+'" /></div>{{^is "post"}}</a>{{/is}}');
+                        }
+                    }  
+                </script>
+             </div>
+        </div>
+    {{/has}} {{! only for status posts  }}
+
+    {{^has tag="quote"}} {{! not show in link posts }}
+        <div class="entry-content">
+            {{#is "post"}}
+                {{content}}
+            {{else}}
+                {{content words="50"}}
+                <p><a href="{{url}}" class="more-link">Continue reading</a></p>
+            {{/is}} {{! not show in qoute posts }}
+        </div> <!-- /.entry-content -->
+    {{/has}}
+
+    {{^has tag="quote"}} {{! not show in quote posts}}
+        <!-- Article footer -->
+        <footer class="entry-footer">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <a href="{{url}}#disqus_thread" class="comments-link">
+                                <span>0 Comments</span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="{{url}}" class="view-link">
+                                <span>{{date format="DD MMMM YYYY"}}</span>
+                            </a>
+                        </th>
+                        <th>
+                            <div class="share-button">
+                                <span>Share</span>
+                                {{> "social-share"}}
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </footer> <!-- /.entry-footer -->
+    {{/has}} {{! not show in quote posts}}
+    </article> <!-- /.post-->   
+</div> <!-- /.col-md-12 -->

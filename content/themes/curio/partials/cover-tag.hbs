@@ -1,0 +1,15 @@
+<div class="row cover tag-cover {{#if tag.image}}" style="background-image: url({{tag.image}}) {{else}}no-image{{/if}}">
+	<div class="col-md-12 cover-inner">
+		<h3 class="tag-name">
+			Tag: {{tag.name}}
+		</h3>
+		<div class="post-count">
+			Total {{plural pagination.total empty='0 Post' singular='% Post' plural='% Posts'}}
+		</div>
+		{{#if tag.description}}
+		<div class="tag-description">
+	        {{tag.description}}
+		</div>
+		{{/if}}
+	</div>
+</div>

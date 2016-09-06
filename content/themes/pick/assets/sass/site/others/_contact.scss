@@ -1,0 +1,57 @@
+.contact-page {
+	.header-title {
+		margin-bottom: 45px;
+	}
+	.sub-heading {
+		font-weight: 400;
+		width: 50%;
+		margin: 1.4em auto 0;
+		line-height: 1.6em;
+	}
+	.site-main .col-md-10 {
+		background: $color__white;
+		border: 1px solid $color__border-four;
+		padding: 35px;
+	}
+	.title {
+		font-style: italic;
+		font-weight: bold;
+		font-size: 1.25em;
+	}
+	#gmaps {
+		height: 530px;
+	}
+	.post img, 
+	.page img {
+	    max-width: none;
+	}
+	.entry-content {
+		margin-top: 25px;
+	}
+	.padding-left {
+		padding-left: 0.5em;
+	}
+	.padding-right {
+		padding-right: 0.5em;
+	}
+	.padding-left-right {
+		padding: 0 0.5em;
+	}
+	.contact-respond {
+		margin-top: 30px;
+		p {
+			margin-bottom: 1em;
+		}
+		.form-submit {
+			margin-bottom: 0;
+		}
+	}
+}
+#respond {
+	iframe #formwrapper .selector-off .optionscontainer {
+		text-align: center !important;
+	}	
+	iframe #formwrapper .selector-off .optionscontainer hr {
+		border: 0 none !important;
+	}
+}

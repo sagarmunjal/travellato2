@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+# Post-gallery One
+--------------------------------------------------------------*/
+%gallery-essential {
+	.owl-controls {
+		margin: 0;
+		padding: 0;
+	}
+	.owl-controls .owl-nav div {
+		display: block !important;
+	   	position: absolute;
+	   	background: $color__white;
+	   	width: 40px;
+	   	height: 40px;
+	   	text-align: center;
+	   	line-height: 37px;
+	   	top: 50%;
+	   	font-size: 25px;
+	   	margin: auto;
+		@include prefixed(border-radius, 2px);
+		@include prefixed(transform, translate(0, -50%));
+	}
+	.owl-controls .owl-nav .owl-prev {
+		left: 10px;
+	}
+	.owl-controls .owl-nav .owl-next {
+		right: 10px;
+	}
+}
+.gallery-one {
+	margin-bottom: 24px;
+	.item {
+		text-align: center;
+		img {
+			margin: auto;
+			height: auto;
+			width: 100%;
+			display: block;
+			vertical-align: middle;
+		}
+	}
+	@extend %gallery-essential;
+}

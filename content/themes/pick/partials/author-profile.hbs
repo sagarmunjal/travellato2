@@ -1,0 +1,39 @@
+{{#author}}
+
+<div class="author-info clearfix" {{#if cover}} style="background-image: url({{cover}})"{{/if}}>
+    <div class="overlay"></div>
+    <div id="author-img">
+        <figure class="at-img">
+            <img src="{{image}}" alt="{{name}}">
+        </figure>         
+    </div> <!-- /#author-img -->
+    
+    <div id="author-details">
+        <h3 class="author-name">{{name}}</h3> 
+        <h4 class="authors-title"></h4>
+        <div class="authors-bio">
+            {{#if bio}}
+                <p>{{bio}}</p>
+            {{else}}
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+            {{/if}}
+        </div>
+    </div> <!-- /#author-details -->
+
+    <footer id="author-footer">
+        <div class="post-count">
+            <b>{{^is "author"}}
+                    <i class="fa fa-map-marker"></i>&nbsp; {{location}}
+                {{/is}}
+
+                {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+            </b>
+        </div> <!-- /.post-count -->
+
+        <div class="authors-social">
+            <b><i class="fa fa-link"></i> <a target="_blank" href="{{website }}">{{website }}</a></b>
+        </div> 
+    </footer>  <!-- /#author-footer -->                
+</div>
+
+{{/author}}

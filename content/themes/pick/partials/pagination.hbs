@@ -1,0 +1,17 @@
+<div class="navigation paging-navigation">
+    <ul class="nav-links">
+        {{#if prev}}
+            <li class="nav-previous pull-left"><a href="{{page_url prev}}"><span class="fa fa-angle-double-left"></span><span> Previous</span></a></li>
+        {{else}}
+            <li class="nav-previous pull-left disabled"><a href="javascript:void(0)"><span class="fa fa-angle-double-left"></span><span> No Posts</span></a></li>
+        {{/if}}
+
+        <li class="page-numbers"><a href="javascript:void(0)">Page {{page}} of {{pages}}</a></li>
+
+        {{#if next}}
+            <li class="nav-next pull-right"><a href="{{page_url next}}"><span>Next</span><span class="fa fa-angle-double-right"></span></a></li>
+        {{else}}
+            <li class="nav-next pull-right disabled"><a href="javascript:void(0)"><span>No Posts</span><span class="fa fa-angle-double-right"></span></a></li>
+        {{/if}}        
+    </ul>
+</div>

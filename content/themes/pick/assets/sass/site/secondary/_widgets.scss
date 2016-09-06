@@ -1,0 +1,70 @@
+.widget {
+	margin: 0 0 1.9em; 
+	border: 1px solid $color__border-one;
+	background: $color__white;
+	padding: 1.9em; 
+	font-family: $font__heading;
+	select {
+		max-width: 100%;
+		width: 100%;
+		border: 1px solid $color__border-one;
+		padding: 0.4em 0.8em;
+	}
+	ul, ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	ul li {
+		border-bottom: 1px solid $color__border-one;
+	}
+	.widget-title-area {
+		position: relative;
+		text-align: center;
+	}
+	.widget-title-area::before, 
+	.widget-title-area::after {
+	    background: #f1f1f1;
+	    content: "";
+	    height: 8px;
+	    position: absolute;
+	    top: 50%;
+	    left: 0;
+	    width: 100%;
+	    margin-top: -18px;
+	}
+	.widget-title {
+		background: $color__white; 
+		font-family: $font__body;
+	   	display: inline-block;
+	    font-weight: bold;
+	    margin-bottom: 30px;
+	    margin-top: 0;
+	    padding: 0 15px;
+	    position: relative;
+	    text-transform: uppercase;
+	    word-spacing: 2px;
+	    z-index: 3;
+	}
+	pre {
+		padding: 0.5em
+	}
+	label {
+		margin-bottom: 0;
+		display: inline;
+	}
+	option {
+		padding: 0.2em 1em;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	textarea {
+		padding: 0.5em 1em;
+		&:focus {
+		 	box-shadow: none !important;
+		}
+	}
+}

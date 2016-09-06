@@ -1,0 +1,17 @@
+<!-- start pagination -->
+<div class="row pagination-wrap">
+	<div class="col-xs-5 pagination-count-wrap">
+		<div class="page-count">
+			Page {{page}} of {{pages}}
+		</div>
+	</div>
+	<div class="col-xs-7 pagination-link-wrap">
+		{{#if prev}}
+		<a href="{{page_url prev}}" class="previous-page-link"><i class="fa fa-long-arrow-left"></i> Newer</a>
+		{{/if}}
+		{{#if next}}
+		<a href="{{page_url next}}" class="next-page-link">Older <i class="fa fa-long-arrow-right"></i></a>
+		{{/if}}
+	</div>
+</div>
+<!-- end pagination -->

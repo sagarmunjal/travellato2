@@ -1,0 +1,61 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! This bellow code is for loading header aria}}
+{{> "header"}}
+
+
+{{! This code to show Post in single page }}
+{{#post}}
+
+        <!-- Content Section 
+        ===================================== -->
+        <div id="content" class="site-content">
+            <div class="container">
+                <div id="primary" class="content-area">
+                    <main id="main" class="about-me">
+                    	<div class="row">
+                    		<div class="col-md-12">   
+		                        <div class="header-title">
+		                            <h2 class="section-title"><span>{{title}}</span></h2>
+		                            <span class="ex-small-border"></span>
+		                        </div> <!-- /.header-title -->  
+
+		                        <div class="row">
+		                        	<div class="col-md-8">
+				                        <!-- Author image -->
+				                        <figure id="author-image-bg" class="author-image"></figure> <!-- /.author-image -->
+		                        	</div> <!-- /.col-md-7 -->	
+
+		                        	<div class="col-md-4">
+			                            <div class="author-details">
+			                            	<span class="append-author-name"></span> <!-- /.author-name -->
+			                                <div class="small-border"></div>
+
+			                                <div class="entry-content">
+			                                    {{content}}  
+			                                </div> <!-- /.entry-content -->
+
+			                                <footer class="about-footer">
+			                                   <div class="author-sign"></div>
+			                                   <div class="follow-link" id="about-follow-social">
+			                                        <span>Follow me : </span>  
+			                                   </div> <!-- /.follow-link -->
+			                                </footer> <!-- /.entry-footer --> 
+			                            </div> <!-- /.author-details -->
+
+			                            <div class="clear"></div>
+
+			                            <div id="author-skill" class="hidden">
+			                            	<h3 class="skill-heading">Skill</h3>
+			                            </div> <!-- /#author-skill -->
+		                        	</div> <!-- /.col-md-5 -->	
+		                        </div> <!-- /.row -->
+                    		</div> <!-- /.col-md-10 -->
+                    	</div> <!-- /.row -->
+                    </main> <!-- / Main -->
+                </div> <!-- / Row -->
+            </div> <!-- / Container -->
+        </div> <!-- / site-content -->
+         <!-- menu -->
+{{/post}}

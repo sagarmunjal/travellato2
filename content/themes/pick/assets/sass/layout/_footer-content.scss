@@ -1,0 +1,94 @@
+/*--------------------------------------------------------------
+# Footer Top
+--------------------------------------------------------------*/
+#footer-top {
+	text-align: center;
+	margin-top: 30px;
+	#instafeed-area .section-title{
+		font-size: 20px;
+		margin-bottom: 18px;
+		margin-top: 0;
+	}
+}
+#footer-top #instafeed {
+	background: $color__white;
+	padding: 25px 0;
+}
+#footer-top #instafeed .list {
+    display: inline-block;
+    width: 16.66%;
+}
+/*--------------------------------------------------------------
+# Footer Middle
+--------------------------------------------------------------*/
+#footer-middle {
+	padding: 60px 0;
+	color: $color__footer;
+	.widget-title {
+		background: transparent;
+	    color: $widget__title;
+	    font-weight: 700;
+	    margin-bottom: 20px;
+	    padding: 0;
+	}
+	.widget .widget-title-area::before, 
+	.widget .widget-title-area::after {
+		background: transparent;
+	}
+	.widget .widget-title-area {
+		text-align: left;
+	}
+}
+
+/*--------------------------------------------------------------
+# Footer Bottom
+--------------------------------------------------------------*/
+#footer-bottom {
+	color: $color__footer;
+	font-size: 13px;
+	background-color: $color__white;
+	.container {
+		text-align: center;
+	}
+	.copyright {
+		padding: 10px 0;
+		p {
+			margin: 0;
+			word-spacing: 0.05em;
+		}
+		a {
+			color: inherit;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Scroll Top
+--------------------------------------------------------------*/
+.topbutton {
+	background: $color__white;
+	border: 1px solid;
+	bottom: 50px;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	position: fixed;
+	right: 20px;
+	text-align: center;
+	width: 40px;
+	@include prefixed(border-radius, 50px);
+	@include prefixed(transition, all .3s);
+}
+
+.btn-show {
+    opacity: 1;
+    @include prefixed(transform, translateY(0));
+}
+
+.btn-hide {
+    opacity: 0;
+     @include prefixed(transform, translateY(40px));
+}

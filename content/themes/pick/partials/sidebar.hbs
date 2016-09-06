@@ -1,0 +1,66 @@
+<!-- sidebar Aria 
+=========================== -->
+<script>
+    if ( Post_Layout === "grid_3" ){
+        $('.siedebar-custom').addClass('hidden');
+    }
+</script>
+
+{{#has tag="sidebar-left, sidebar-right"}}
+    {{#has tag="sidebar-left"}}
+        <div class="siedebar-custom col-md-4 col-md-pull-8" >
+    {{/has}}
+    {{#has tag="sidebar-right"}}
+        <div class="siedebar-custom col-md-4">
+    {{/has}}
+{{else}}
+    
+    {{#is "post, page"}}
+        {{#is "post"}}
+        <div class="col-md-4" id="post-sidebar-layout">
+        {{/is}}
+        {{#is "page"}}
+        <div class="col-md-4" id="page-sidebar-layout">
+        {{/is}}
+    {{else}}
+        <div class="siedebar-custom col-md-4" id="sidebar-layout">
+    {{/is}}
+     
+{{/has}}
+
+    <div id="secondary" class="widget-area">
+
+        <script>
+        
+            // Showing Widgets by order
+            for ( var key in Sidebar_Widget_Order ) {      
+            
+                if ( Sidebar_Widget_Order[key] === "About_Me_Widget" && About_Me_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/about-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Ads_Widget" && Ads_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/ads-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Navigation_Widget" && Navigation_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/navigation-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Social_Widget" && Social_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/social-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Facebook_Page_Widget" && Facebook_Page_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/facebook-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Googleplus_Page_Widget" && Googleplus_Page_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/google-plus-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Twitter_Widget" && Twitter_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/twitter-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Flickr_Widget" && Flickr_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/flickr-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Mailchimp_Widget" && Mailchimp_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/newsletter-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Latest_Posts_Widget" && Latest_Posts_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/latest-posts-widget"}}');
+                } else if ( Sidebar_Widget_Order[key] === "Tags_Widget" && Tags_Widget['show'] === true  ) {
+                    document.write('{{> "widgets/tags-widget"}}');
+                } 
+            } 
+            
+        </script>
+
+    </div> <!-- / #Secondary -->
+</div> <!-- / col-md-4 / Sidebar-aria -->

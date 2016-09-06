@@ -1,0 +1,56 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! This bellow code is for loading header aria}}
+{{> "header"}}
+
+{{! This code to show Post in single page }}
+{{#post}}
+
+<!-- Content Section 
+===================================== -->
+<div id="content" class="site-content contact-page">
+    <div class="container">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+            	<div class="row">
+            		<div class="col-md-10 col-md-offset-1">   
+                        <div class="header-title">
+                            <h2 class="section-title"><span>{{title}}</span></h2>
+                            <span class="ex-small-border"></span>
+                        </div> <!-- /.header-title -->  
+
+                        <!-- Maps Area -->
+                        <div class="gmaps-area">
+                            <div id="gmaps"></div>                                   
+                        </div> <!-- /.gmaps-area -->
+                        <div class="clear"></div>
+
+                        <div class="entry-content">
+                            {{content}}
+                        </div> <!-- /.entry-content -->  
+
+                        <div class="clear"></div>
+
+                        <div class="row" id="contact-form-wrap">
+                            <div class="col-md-12">
+                                <div class="contact-respond" id="respond">
+
+                                    <script type="text/javascript">var servicedomain="www.123contactform.com"; var frmRef=''; try { frmRef=window.top.location.href; } catch(err) {}; var cfJsHost = (("https:" == document.location.protocol) ? "https://" : "http://"); document.write(unescape("%3Cscript src='" + cfJsHost + servicedomain + "/includes/easyXDM.min.js' type='text/javascript'%3E%3C/script%3E")); frmRef=encodeURIComponent(frmRef).replace('%26','[%ANDCHAR%]'); document.write(unescape("%3Cscript src='" + cfJsHost + servicedomain + "/jsform-1708210.js?ref="+frmRef+"' type='text/javascript'%3E%3C/script%3E")); </script>
+
+                                    <p>Powered by <a class="footerLink13" title="123ContactForm" href="http://www.123contactform.com">123ContactForm</a> | <a style="font-size:small!important;color:#000000!important; text-decoration:underline!important;" title="Looks like phishing? Report it!" href="http://www.123contactform.com/sfnew.php?s=123contactform-52&amp;control119314=http:///contact-form--1708210.html&amp;control190=Report%20abuse" rel="nofollow">Report abuse</a></p><!-- www.123contactform.com script ends here -->
+        
+                                                 
+                                </div><!-- #respond --> 
+                            </div> <!-- /.col-md-12 -->
+                        </div> <!-- /.row -->
+            		</div> <!-- /.col-md-10 -->
+            	</div> <!-- /.row -->
+            </main> <!-- / Main -->
+        </div> <!-- / Row -->
+    </div> <!-- / Container -->
+</div> <!-- / site-content -->
+
+{{/post}}
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=true"></script><!-- gmaps -->
+<script src="{{asset "js/gmaps.js"}}"></script> <!-- gmaps --> 

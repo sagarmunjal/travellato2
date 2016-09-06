@@ -1,0 +1,378 @@
+/*--------------------------------------------------------------
+# About widget
+--------------------------------------------------------------*/
+.about-widget {
+	.author-image-home {
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.author-name {
+		text-align: center;
+		font-family: $font__heading;
+		margin: 20px 0;
+		font-size: 25px;
+	}
+	.about-description {
+		text-align: center;
+		font-family: $font__body;
+		p {
+			margin-bottom: 2em;
+			font-size: 14px;
+			line-height: 1.6em;
+		}
+	}
+	.more-link {
+		margin-bottom: 7px;
+	}
+	.more-link::after {
+		top: 26px;
+		width: 45px;
+	}
+	.more-link:hover::after {
+		width: 50px;
+	}
+}
+
+/*--------------------------------------------------------------
+# Latest Post widget
+--------------------------------------------------------------*/
+.feed-wrapper {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid $color__border-one;
+    .image-area {
+        width: 65px;
+        float: left;
+        margin-right: 20px;
+        .fit-img {
+            position: relative;
+            overflow: hidden;
+            padding-top: 100%;
+            @include prefixed(transform,translateZ(0));
+        }
+        img {
+        	width: 66px;
+        	height: 66px;
+        }
+    }
+    .item-text {
+        position: absolute;
+        display: inline-block;
+        h5 {
+            margin-top: 0;
+            margin-bottom: 2px;
+            font-size: 15px;
+            line-height: 1.4em;
+            display: block;
+            max-height: 2.8em;
+            overflow: hidden;
+        }
+    }
+    .item-meta {
+        font-family: $font__body;
+        font-size: 11px;
+        font-style: italic;
+        color: $color__meta;
+        word-spacing: 0.1em;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .fit-img img {
+        position: absolute!important;
+        width: 100%;
+        height: 100%;
+        max-width: none!important;
+        top: 50%;
+        left: 50%;
+        @include prefixed(transform,translate(-50%, -50%));
+    }
+    &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border: 0 none;
+    }
+}
+/*--------------------------------------------------------------
+# TagCloud Widget
+--------------------------------------------------------------*/
+.widget_tag_cloud {
+	.tagcloud {
+		margin-bottom: -2px;
+		a {
+			border: 1px solid $color__border-four;
+			display: block;
+			color: $color__black;
+			float: left;
+			font-size: 12px !important;
+			font-weight: normal;
+			line-height: 1.4em !important;
+			margin-bottom: 5px;
+			margin-right: 5px;
+			padding: 6px 17px;
+			position: relative;
+			text-decoration: none;
+			transition: all 0.2s linear 0s;
+			white-space: nowrap;
+			&:hover {
+				color: $color__white;
+				transition: all 0.1s linear 0s;
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Follow Us Widget
+--------------------------------------------------------------*/
+.follow-us-area {
+	margin: 0 auto -7px;
+	text-align: center;
+	.follow-link .fa {
+		border: 1px solid $color__border-four;
+		background: $color__white;
+		color: $color__meta;
+		height: 35px;
+		line-height: 2.8em;
+		margin: 0 3px 9px;
+		font-size: 0.8em;
+		display: inline-block;
+		text-align: center;
+		width: 35px;
+		&:hover {
+			color: $color__white;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# About And Contact Widget
+--------------------------------------------------------------*/
+.widget-contact {
+	.contact-logo {
+		margin-bottom: 15px;
+	}
+	.description {
+		font-family: $font__body;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+/*--------------------------------------------------------------
+# Advertisement Widget
+--------------------------------------------------------------*/
+.widget_pick_advertisement {
+	.advertisement-img img {
+		margin: auto;
+	}
+}
+/*------------------------------------------------------------------------
+# Links widget
+-------------------------------------------------------------------------*/
+.widget_links a,
+.widget_meta a,
+.widget_nav_menu .menu a,
+.widget_pages a,
+.widget_recent_comments a,
+.widget_recent_entries a {
+	border: 0;
+	color: $color__text-main;
+}
+.widget_recent_comments {
+	.recentcomments a {
+		&:nth-child(2), 
+		&:nth-child(3),
+		&:nth-child(4) {
+			&:before {
+				content: "";
+				margin-right: 0;
+			}
+		}
+	}
+}
+.widget_links,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries {
+	font-size: em(15px);
+	a {
+		border: 0;
+		text-decoration: none;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		li {
+			margin-top: 10px;
+			padding-top: 10px;
+			border-top: 1px dotted $color__border-one;
+			border-bottom: 0 none;
+			span:before,
+			a:before {
+				content: "\f054";
+				font-family: FontAwesome;
+				margin-right: 1em;
+				font-size: 0.55em;
+				vertical-align: middle;
+				position: relative;
+				top: -1.5px;
+				left: 0;
+				@include prefixed(transition, left 0.35s ease-in);
+			}
+			span > a:before {
+				content: "";
+				margin-right: 0;
+			}
+			> a span:before {
+				content: "";
+				margin-right: 0;	
+			}
+			span:hover,
+			a:hover {
+				&:before {
+					left: 5px;
+				}
+			}
+		}	
+	}
+	> ul > li:first-child {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: 0 none;
+	}
+}
+
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+	border: 0;
+	margin: 0 0 0 1em;
+}
+.widget_recent_entries .post-date {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Text Widget
+--------------------------------------------------------------*/
+.widget_text {
+	text-align: center;
+	img {
+		margin: auto;
+	}
+}
+.textwidget > :last-child {
+	margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+# Twitter Widget Plugin
+--------------------------------------------------------------*/
+.timeline {
+	background: transparent !important;
+}
+.customisable-border {
+	border: 0 none !important;
+}
+/*--------------------------------------------------------------
+# Email Subscribe Widget
+--------------------------------------------------------------*/
+.newsletter-area {
+	font-family: $font__body;
+	margin-top: -8px;
+	> p {
+		margin-bottom: 15px;
+	}
+	.form-newsletter {
+		p {
+			margin-bottom: 10px;
+		}
+		.form-controller {
+			background: transparent;
+			border-color: $color__border-three !important;
+			font-style: italic;
+			height: 45px;
+		}
+		.btn {
+			border: none;
+		}
+		.pad-left {
+			padding-left: 5px;
+		}
+		.pad-right {
+			padding-right: 5px;
+		}
+		#mc-embedded-subscribe {
+			background: transparent;
+			color: $color__heading;
+			position: relative;
+			text-transform: uppercase;
+			border: 0 none;
+			font-size: 12px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			word-spacing: 3px;
+			&:hover, &:focus, &:active:focus {
+				text-decoration: none !important;
+				outline: none;
+				background: transparent;
+				@include prefixed(box-shadow,inset 0 0px 0px rgba(0, 0, 0, 0)); 
+			}
+		}
+		#mc-embedded-subscribe:after {
+			content: "";
+			height: 2px;
+			left: 0;
+			margin: auto;
+			overflow: visible;
+			position: absolute;
+			right: 0;
+			top: 35px;
+			width: 45px;
+			@include prefixed(transition, width 0.3s ease 0s);
+		}
+		#mc-embedded-subscribe:hover:after {
+			width: 75px;
+		}
+		.mce_inline_error {
+			margin-bottom: 8px;
+			color: #aa1515;
+			font-size: 13px;
+			&.form-controller {
+				margin-bottom: 0;
+			}
+		}
+	}
+	#mce-success-response {
+		margin-top: 10px;
+		color: green;
+		font-size: 13px;
+	}
+	.mc-response{
+		margin-top: 10px;
+		font-size: 13px;
+	}
+}
+/*--------------------------------------------------------------
+# Flickr Widget Plugin Fix
+--------------------------------------------------------------*/
+ul.flickr li, 
+.widget ul.flickr li {
+	margin: 3px!important;
+	border-bottom: none;
+}
+.glimmer_flickr_album.flickr img {
+	height: 77px;
+	width: 94px;
+}
+.glimmer_flickr_album.flickr li {
+	float: left;
+}

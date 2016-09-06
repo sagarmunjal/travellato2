@@ -1,0 +1,46 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! This bellow code is for loading header aria}}
+{{> "header"}}
+
+        <!-- Content Section 
+        ===================================== -->
+        <div id="content" class="site-content">
+	        <!-- Archive Page Title -->
+	        <div class="archive-page-title">
+                <div class="container">                
+    	            <div class="row">
+    	                <div class="col-md-12">                          
+    	                    <div class="title-content">
+    	                        <h1><span>Browsing category</span>{{tag.name}}</h1>
+    	                    </div>
+    	                </div>
+    	            </div>
+                </div>
+	        </div> <!-- /.archive-page-title -->
+	        
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8" id="main-layout">
+                        <div id="primary" class="content-area">
+                            <main id="main" class="site-main">
+                            	<div class="row">
+                            		{{! The code below includes the post loop - partials/loop-main.hbs }}
+                                    {{#foreach posts}}
+                                            {{> "loop"}} 
+                                    {{/foreach}}
+                            	</div> <!-- /.row -->
+
+                                <!-- pagination -->
+                              	{{pagination}}
+                            </main> <!-- / Main -->
+                        </div> <!-- / Content-Aria -->
+                    </div> <!-- / Col-md-8 -->
+
+                    <!-- sidebar Aria 
+                    =========================== -->
+					{{> "sidebar"}}
+                </div> <!-- / Row -->
+            </div> <!-- / Container -->
+        </div> <!-- / site-content -->

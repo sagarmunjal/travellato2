@@ -1,0 +1,28 @@
+.error-page {
+	background: $color__white;
+	padding: 85px 0;
+	.error-description {
+		text-align: center;
+	}
+	.error-image {
+		padding-bottom: 45px;
+	}
+	.error-image img {
+		margin: auto;
+		position: relative;
+	}
+	.goto-button {
+		text-align: center;
+		display: block;
+	} 
+	.go-to {
+		text-align: center;
+		&:first-child {
+			margin-right: 8px;
+			position: relative;
+		}
+		&:last-child {
+			position: relative;
+		}
+	}
+}

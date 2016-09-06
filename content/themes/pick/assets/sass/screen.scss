@@ -1,0 +1,137 @@
+/*
+Theme Name: Pick
+Theme URI: http://pick-ghost.softhopper.org
+Author: SoftHopper
+Author URI: http://softhopper.net
+Description: It\' s a Ghost blog theme. Which is a unique feature and user competitive feature.
+Version: 1.0
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography
+# Elements
+	## Post, Page, Comments Table
+# Forms
+# Navigation
+	## Links
+	## Menus
+	## Pagination
+	## Navigation responsive
+		### Mobile CSS
+		### Pagination responsive
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+#layouts
+	## Header Content
+		### Pre-Loader
+		### Site Header
+	## Featured Content
+	## Main Content
+		### Single Post Footer
+		### Single Post Navigation
+		### Category Section Heading
+		### Post Author Info 
+		### Related Post 
+	## Widget-content
+		### About widget
+		### Latest widget
+		### Popular widget
+		### Categories And Archive Widget
+		### TagCloud Widget
+		### Follow Us Widget
+		### About And Contact Widget
+		### Advertisement Widget
+		### Links Widget
+		### Twitter Widget Plugin
+    ### Email Subscribe Widget
+		### Flickr Widget
+	## Footer Content
+		### Footer Top
+		### Footer Middle
+		### Footer Bottom
+	## Layout Responsive
+		### Header Responsive
+		### Featured Responsive
+		### Content Area Responsive
+		### Post author-info Responsive
+		### Footer Responsive
+# Site Content
+    ## Posts and pages
+    	### Page Heading
+    	### Post Meta
+    	### Post Format
+	## Comments
+	## About Page
+	## Contact Page
+	## 404 Page
+	## Site Responsive
+		### Post Format Responsive
+		### Comment and Contact Form Responsive
+		### Contact Page Responsive
+		### 404 page Responsive
+# Infinite scroll
+# Media
+	## Galleries
+		### Post-gallery
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+# Site Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+

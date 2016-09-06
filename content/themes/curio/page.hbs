@@ -1,0 +1,32 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<div class="content-area-wrap">
+	{{> mobile-header}}
+	<!-- start main content -->
+	<div class="container-fluid main-content-wrap">
+		<div class="row">
+			{{#post}}
+			<div class="col-md-8 single-post-wrap">
+				<article id="{{id}}" class="{{post_class}} single-post-full">
+					<div class="post-content-wrap">
+						<header class="post-header">
+								<h2 class="post-title">{{title}}</h2>
+						</header>
+						{{#if image}}
+						<div class="featured-media">
+							<img src="{{image}}" alt="{{{title}}}">
+						</div>
+						{{/if}}
+						<div class="post-content-full">
+							{{content}}
+						</div>
+					</div>
+				</article>
+			</div>
+			{{/post}}
+			{{> sidebar}}
+		</div>
+	</div>
+	<!-- end main content -->
+</div>

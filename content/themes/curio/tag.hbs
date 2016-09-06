@@ -1,0 +1,54 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<div class="content-area-wrap">
+	{{> mobile-header}}
+	<!-- start main content -->
+	<div class="container-fluid main-content-wrap">
+		{{> cover-tag}}
+		<div class="row posts-wrap-outer">
+			{{#foreach posts}}
+			<!-- start post -->
+			<div class="col-md-6 post-wrap">
+				<a href="{{url}}">
+					<article id="{{id}}" class="{{post_class}} post-single {{#if image}}" style="background-image: url({{image}}){{else}}no-image{{/if}}">
+						<div class="post-content">
+							{{#if featured}}
+							<div class="featured-mark">
+								<i class="fa fa-star"></i>
+							</div>
+							{{/if}}
+							<header class="post-header">
+									<div class="post-meta">
+										{{date format="MMMM DD, YYYY"}}
+									</div>
+									<h3 class="post-title">{{title}}</h3>
+							</header>
+							<div class="post-excerpt">
+								{{excerpt words="18"}}
+							</div>
+							<footer class="post-footer">
+								{{#author}}
+									{{#if image}}
+									<img src="{{image}}" alt="Author image" class="avatar">
+									{{else}}
+									<img src="{{asset "images/default-user-image.jpg"}}" alt="Author image" class="avatar">
+									{{/if}}
+									<span class="author-name">{{name}}</span>
+								{{/author}}
+							</footer>
+							<span class="bdr-top"></span>
+							<span class="bdr-right"></span>
+							<span class="bdr-bottom"></span>
+							<span class="bdr-left"></span>
+						</div>
+					</article>
+				</a>
+			</div>
+			<!-- end-post -->
+			{{/foreach}}
+		</div>
+		{{pagination}}
+	</div>
+	<!-- end main content -->
+</div>

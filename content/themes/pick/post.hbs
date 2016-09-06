@@ -1,0 +1,61 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! This bellow code is for loading header aria}}
+{{> "header"}}
+
+{{! This code to show Post in single page }}
+{{#post}}
+    <!-- Content Section 
+    ===================================== -->
+    <div id="content" class="site-content">
+        <div class="container">
+            <div class="row">
+                {{#has tag="sidebar-left, sidebar-right, full-width"}}
+                    {{#has tag="sidebar-left"}}
+                        <div class="col-md-8 col-md-push-4">
+                    {{/has}}
+                    {{#has tag="sidebar-right"}}
+                        <div class="col-md-8">
+                    {{/has}}
+                    {{#has tag="full-width"}}
+                        <div class="col-md-10 col-md-offset-1">
+                    {{/has}}
+                {{else}}
+                    <div class="col-md-8" id="post-main-layout">
+                {{/has}}
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main">
+                        	<div class="row">
+
+
+                        		{{> "loop"}}
+
+                        		<div class="col-md-12">
+	                                <!-- author-info -->
+	                                {{> "author-profile"}}
+
+	                                <!-- Related Post -->
+	                                <div class="related-post clearfix">
+		                                <h3 class="related-post-title"><span>Related Post</span></h3>
+		                                <div id="related-post-wrap" class="row"></div> 
+		                            </div> <!-- /.related-post -->
+
+	                                <!-- comment-area -->
+	                                {{> "comments-disqus"}}
+
+                        		</div> <!-- /.col-md-12 -->
+                        	</div> <!-- /.row -->
+                        </main> <!-- / Main -->
+                    </div> <!-- / Content-Aria -->
+                </div> <!-- / Col-md-8 -->
+
+                {{^has tag="full-width"}}
+                    {{> "sidebar"}}
+                {{/has}}
+
+            </div> <!-- / Row -->
+        </div> <!-- / Container -->
+    </div> <!-- / site-content -->
+
+{{/post}}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Specific Meta
+        ================================================== -->
+        <meta name="description" content="{{meta_description}}" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Titles
+        ================================================== -->        
+        <title>
+            {{#is "author"}}
+                {{author.name}} | {{@blog.title}}
+            {{else}}
+                {{meta_title}} | {{meta_description}}
+                {{#is "post, page"}} 
+                    {{@blog.title}} 
+                {{/is}} 
+            {{/is}} 
+        </title>
+        
+        <!-- Favicons
+        ================================================== -->
+        <!-- <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">  -->
+
+        <!-- Custom Font
+        ================================================== -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{asset "fonts/font-awsome/css/font-awesome.min.css"}}">
+
+        <!-- CSS
+        ================================================== -->
+        <link rel="stylesheet" href="{{asset "lib/bootstrap/css/bootstrap.min.css"}}">
+        <link rel="stylesheet" href="{{asset "lib/circliful/jquery.circliful.css"}}">
+        <link rel="stylesheet" href="{{asset "css/plugin.css"}}">
+        <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+        <link rel="stylesheet" href="{{asset "colors/color-schemer.css"}}">
+     
+        <!-- Modernizr and jQuery
+        ================================================== -->
+        <script src="{{asset "js/vendor/modernizr-2.8.3.min.js"}}"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{asset "js/vendor/jquery-1.11.2.min.js"}}"><\/script>')</script>
+
+        
+        {{! Ghost outputs important style and meta data with this tag }}
+        {{ghost_head}}
+
+	</head>
+
+	<body class="{{body_class}}">
+
+        {{! Everything else gets inserted here }}
+        {{{body}}}
+
+        {{> "footer"}}
+        
+        {{! Ghost outputs important scripts and data with this tag }}
+        {{ghost_foot}}
+
+
+        <!-- All The JS Files
+        ================================================== --> 
+        <script src="{{asset "lib/bootstrap/js/bootstrap.min.js"}}"></script> <!-- bootstrap -->
+        <script src="{{asset "js/plugins.js"}}"></script> <!-- plugins -->        
+        <script src="{{asset "js/widget.js"}}"></script> <!-- plugins -->
+        <script src="{{asset "js/pick.js"}}"></script> <!-- pick script -->
+    </body>
+</html>

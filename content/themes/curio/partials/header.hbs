@@ -1,0 +1,25 @@
+<!-- start main header -->
+<div class="header-wrap hidden-xs {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}} no-cover{{/if}}">
+	<header class="main-header">
+		<div class="logo">
+			{{#if @blog.logo}}
+			<a class="image-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+			{{else}}
+			<a href="{{@blog.url}}">{{@blog.title}}</a>
+			{{/if}}
+		</div>
+		{{#if @blog.description}}
+		<div class="description">
+			{{@blog.description}}
+		</div>
+		{{/if}}
+		<!-- start navigation -->
+		<nav class="main-navigation">
+            <ul class="menu">
+            	{{navigation}}
+			</ul>
+		</nav>
+		<!-- end navigation -->
+	</header>
+</div>
+<!-- end main header -->

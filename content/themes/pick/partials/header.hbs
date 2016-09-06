@@ -1,0 +1,173 @@
+ <div class="preloader hidden" id="preloader">
+
+    <script>
+        Loader_logo = Pre_Loader['logo'];
+        if ( Loader_logo ) {
+            document.write('<div class="preloader-logo"><img class="img-responsive" src="'+Loader_logo+'" alt="{{@blog.title}}" /></div>');
+        }
+    </script>
+
+     <div class="loader">
+         <script type="text/javascript">
+             var preloader_animated_icon = Pre_Loader['animation_icon'];
+             if ( preloader_animated_icon == 1 ) {
+                 var animated_icon =  "fa-spinner fa-pulse";
+             } else if ( preloader_animated_icon == 2 ) {
+                 var animated_icon = "fa-spinner fa-spin";
+             } else if ( preloader_animated_icon == 3 ) {
+                 var animated_icon = "fa-circle-o-notch fa-spin";
+             } else if ( preloader_animated_icon == 4 ) {
+                 var animated_icon = "fa-refresh fa-spin";
+             } else if ( preloader_animated_icon == 5 ) {
+                 var animated_icon = "fa-cog fa-spin";
+             } else {
+                 var animated_icon = "";
+             }
+             
+             document.write('<i class="fa '+animated_icon+'"></i>');
+         </script>
+     </div>  <!-- /.loader -->
+ </div> <!-- /.preloader -->
+
+ <script type="text/javascript">
+     
+     function getUrlParameterForPreloader(sParam) {
+         var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+             sURLVariables = sPageURL.split('&'),
+             sParameterName,
+             i;
+
+         for (i = 0; i < sURLVariables.length; i++) {
+             sParameterName = sURLVariables[i].split('=');
+
+             if (sParameterName[0] === sParam) {
+                 return sParameterName[1] === undefined ? true : sParameterName[1];
+             }
+         }
+     };
+
+     var preloader = getUrlParameterForPreloader('preloader');
+
+     if ( preloader == "on" || Pre_Loader['show'] == true ) {
+         document.getElementById("preloader").classList.remove("hidden");
+     }
+
+ </script>
+ <!-- Search Area -->
+<!-- ========================= -->
+<div id="search-screen">
+    <div class="search-close"></div>
+    <div class="container">
+        <div class="text-center search-head">
+            <h3>Looking for something?</h3>
+        </div>
+        <div class="search default">
+            <form class="searchform" action="#" method="get">
+                <div class="input-group">
+                    <input type="search" id="heading-search" name="s" class="form-controller" placeholder="Just Type and Hit Enter">
+                    <span class="input-group-btn">
+                        <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div id="pick-search-result"></div>
+    </div>        
+</div> <!-- #search-screen -->
+
+ <!-- Header Start Here -->
+<!-- ========================= -->
+<header class="site-header" id="masthead">
+    {{^if @blog.cover}} 
+        <script>
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = "#masthead > .site-header { background-color: "+header_background_color+"  }";
+            document.body.appendChild(css);
+        </script> 
+
+    {{/if}}
+    <div class="site-header" {{#if @blog.cover}} style="background-image: url({{@blog.cover}}); background-color: #000; "{{/if}}>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site-branding">
+                       <a class="site-logo" href="{{@blog.url}}" id="site-logo-main">
+                       		{{#if @blog.logo}} 
+                   		       <img class="img-responsive" src="{{@blog.logo}}" alt="{{@blog.title}}" /> 
+                       		{{else}} 
+                       		    <img class="img-responsive" src="{{asset "images/logo.png"}}" alt="{{@blog.title}}" />
+                       		{{/if}}
+                       	</a>
+                    </div> <!-- /site-branding -->
+                </div> <!-- / col-md-12 -->
+            </div> <!-- / Row -->
+        </div> <!-- / container -->
+    </div> <!-- /site-header -->
+
+     <!-- Menu -->
+    <div class="menucontent overlapblackbg"></div>
+    <div class="menuexpandermain slideRight">
+        <a id="navToggle" class="animated-arrow slideLeft"><span></span></a>
+        <span id="menu-marker">Menu</span>
+    </div>
+    <nav class="top-menu slideLeft clearfix">
+        <div class="container">
+            <div class="row">
+        		<div class="menu-wrapper">            			
+                    <ul class="mobile-sub menu-list">
+                        <script>
+                             if ( dynamic_ghost_nav === true  ) {
+                                    document.write('{{navigation}}');
+                                } else {
+                                    document.write('{{> "navigation-custom"}}');
+                                }
+                        </script>
+                    </ul>
+        		</div> <!-- /.menu-wrapper -->
+                            
+
+                <!-- social search aria -->
+                <div class="social-search">
+                    <div class="top-social"></div> <!-- / .top-social -->
+                    <div id="top-search">       
+                        <button id="search-btn" type="button" class="btn btn-default"><i class="fa fa-search"></i></button>   
+                    </div>
+                </div> <!-- /.social-search -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->                
+    </nav> <!-- /.menu  -->
+</header> <!-- Header End -->
+
+<script>
+    function getUrlParameters(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+    var layout = getUrlParameters('layout');
+    var post_layout = getUrlParameters('post_layout');
+    var sticky_post = getUrlParameters('sticky_post');
+
+    if ( post_layout === 'grid' ) {
+        var Post_Layout = "grid";
+    } else if ( post_layout === 'list' ) {
+        var Post_Layout = "list";
+    } else if ( post_layout === 'grid_3' ) {
+        var Post_Layout = "grid_3";
+    }
+    if ( sticky_post === "no") {
+        var Sticky_Post = false;
+    }
+</script>

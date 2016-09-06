@@ -1,0 +1,17 @@
+ <script type="text/javascript">
+    function pickPopupWindow(url, title, w, h) {
+        var left = (screen.width / 2) - (w / 2);
+        var top = (screen.height / 2) - (h / 2);
+        return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }                            
+</script>
+
+<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" onclick="pickPopupWindow(this.href, 'facebook-share', 580, 400); return false;"><span class="fa fa-facebook"></span></a>
+
+<a href="https://twitter.com/home?status={{url absolute='true'}}" onclick="pickPopupWindow(this.href, 'facebook-share', 580, 400); return false;"><span class="fa fa-twitter"></span></a>
+
+<a href="https://plus.google.com/share?url={{url absolute='true'}}" onclick="pickPopupWindow(this.href, 'google-plus-share', 550,530); return false;"><span class="fa fa-google-plus"></span></a>
+
+<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><span class="fa fa-pinterest-p"></span></a>
+
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute='true'}}" onclick="pickPopupWindow(this.href, 'linkedin-share', 550,530); return false;"><span class="fa fa-linkedin"></span></a>
