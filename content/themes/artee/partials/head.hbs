@@ -1,0 +1,23 @@
+<header id="artee-site-head" class="{{#if image}}with-post-image {{/if}}artee-site-head">
+    <div class="artee-blog-title">
+        {{! header partial partials/head.hbs}}
+        {{#if @blog.logo}}
+            <div class="artee-site-logo">
+                <a id="artee-blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt=""></a>
+            </div>
+        {{/if}}
+        <div class="artee-header">
+            <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        </div>
+        {{! menu partial import partials/menu.hbs}}
+        <div class="artee-blog-menu">
+            {{> menu}}
+        </div>
+    </div>
+    {{#is 'index'}}
+        <div class="artee-blog-description">
+            <h2>{{@blog.description}}</h2>
+            <h3><a href='https://www.facebook.com/letstravellato' target='_blank'>A sufi holy man was asked what forgiveness is. <br> he said <br> - it is the fragrance that flowers give when they are crushed. </a></h3>
+        </div>
+    {{/is}}
+</header>
